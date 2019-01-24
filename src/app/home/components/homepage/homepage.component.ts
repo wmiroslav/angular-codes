@@ -36,7 +36,6 @@ export class HomepageComponent extends WrapperComponent implements OnInit {
     this.user = new User('John');
     console.table([this.user]);
     const number: number = this.print(123);
-    console.log(number);
   }
 
   private print<T>(arg: T): T {

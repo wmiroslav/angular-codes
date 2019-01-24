@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing';
 import { HeaderComponent } from './layout/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
-
+ 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+ 
 
   ],
   imports: [

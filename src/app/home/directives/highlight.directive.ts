@@ -16,13 +16,15 @@ export class HighlightDirective implements OnInit {
       // change with HostBinding
       this._color = this.defaultColor;
     }
+    // TODO: use parent directive
+    // private parentDirective: ParentDirective
 
 
   ngOnInit() {
     // direct access to native element:
     this.elementRef.nativeElement.style.backgroundColor = 'green';
 
-    // access with rederer wrapper (for SSR stc.)
+    // manipulate the DOM with wrapper (for SSR stc.)
     this.renderer.setStyle(this.elementRef.nativeElement, 'border', '2px solid red');
   }
 

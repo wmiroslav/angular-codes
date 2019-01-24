@@ -1,0 +1,19 @@
+
+<ng-template [ngIf]="true" #template>
+  <h2>NG Template example</h2>
+</ng-template>
+
+
+<h2 #element>Element</h2>
+
+<br>
+<button (click)="getParentName()">get parent component name</button>
+{{ parent }}
+<br>
+
+<app-simple></app-simple>
+
+<h2 appSimple>directive holder</h2>
+
+
+

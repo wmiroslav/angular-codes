@@ -1,5 +1,5 @@
 import { CloseService } from './../services/close.service';
-import { Component, OnInit, Input, TemplateRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef, Output, EventEmitter, AfterContentInit, ContentChild } from '@angular/core';
 import { EventManager } from '@angular/platform-browser';
 
 @Component({
@@ -7,13 +7,17 @@ import { EventManager } from '@angular/platform-browser';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent implements OnInit, AfterContentInit {
 
   @Input() body: TemplateRef<any>;
   @Input() title = 'Standard';
   @Output() dismiss = new EventEmitter<number>();
   @Input() hideEsc = true;
   @Input() context: any;
+
+  // TODO
+  // @ContentChild() ContentEl; // ng-content
+
 
   constructor(private closeService: CloseService,
     private eventManager: EventManager) { }
@@ -24,6 +28,10 @@ export class ModalComponent implements OnInit {
         this.close();
       }
     });
+  }
+
+  ngAfterContentInit() {
+
   }
 
 

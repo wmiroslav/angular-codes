@@ -11,4 +11,8 @@ export class RootComponent implements OnInit {
   ngOnInit() {
   }
 
+  getName(): string {
+    return 'RootComponent';
+  }
+
 }
