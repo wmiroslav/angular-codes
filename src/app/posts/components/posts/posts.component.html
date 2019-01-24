@@ -1,0 +1,39 @@
+
+<div *ngFor="let p of posts; trackBy: trackByFn"
+      class="list" (click)="selectPost(p)"
+      [ngClass]="{'active': p === selectedPost}">
+  {{ p.title }}
+</div>
+
+
+<!-- post1 -->
+  <ng-template #modalBody let-tname="tname">
+    <h4>{{ selectedPost?.title }}, {{ tname }}</h4>
+  </ng-template>
+  <app-modal #modal [context]="{tname: 'with context'}"
+    [body]="modalBody" *appOpenModal="[showPost3]">
+    <button class="close" (click)="modal.close()">close</button>
+  </app-modal>
+  <button #showPost3>open template slot</button> 
+  
+  
+  <!-- post2 -->
+  <app-modal #modal *appOpenModal="[showPost2]">
+    <button class="close" (click)="modal.close()">close</button>
+  
+    <h4>{{ selectedPost?.title }}</h4>
+  </app-modal>
+  <button #showPost2>open content projection</button> 
+  
+  <!-- post3 -->
+  <ng-template #post3Content>
+    <h4>{{ selectedPost?.title }}</h4>
+  </ng-template>
+  <ng-container #post></ng-container>
+  <button (click)="openModal()">open dynamic modal</button> 
+
+
+  <br><br><br>
+
+
+  

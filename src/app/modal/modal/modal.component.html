@@ -1,0 +1,33 @@
+<div class="modal-bg" (click)="close()">
+
+  <div class="modal-content" (click)="prevent($event)">
+    
+    <!-- multiple contents -->
+    <ng-content select=".close"></ng-content>
+    
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+    <hr>
+    
+    <ng-container *ngIf="body else slot">
+      <h2>Input Template</h2>
+      <ng-container *ngTemplateOutlet="body; context: context"></ng-container>
+    </ng-container> 
+    <ng-template #slot>
+      <h2>Content Projection - slot</h2>
+      <ng-content></ng-content> 
+    </ng-template>
+    
+    
+    <ng-template #footer>
+      <hr>
+      footer
+    </ng-template>
+    
+    <ng-container [ngTemplateOutlet]="footer">
+    </ng-container>
+    
+  </div>
+  
+</div>

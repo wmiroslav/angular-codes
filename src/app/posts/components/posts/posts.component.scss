@@ -1,0 +1,10 @@
+@import '~src/styles/variables';
+
+.list {
+    padding: 10px;
+    border: 2px solid gainsboro;
+    cursor: pointer;
+}
+.active {
+    background: gainsboro;
+}
