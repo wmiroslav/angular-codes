@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing';
 import { HeaderComponent } from './layout/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DropdownContentDirective } from './dropdown-content.directive';
+import { DropdownDirective } from './dropdown.directive';
  
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    DropdownContentDirective,
+    DropdownDirective,
  
 
   ],

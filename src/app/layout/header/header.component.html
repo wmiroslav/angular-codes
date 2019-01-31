@@ -1,17 +1,38 @@
-<ul>
-  <li>
-    <a routerLink="">home (m1)</a>
-  </li>
-  <li>
-    <a routerLink="about">about (m1)</a>
-  </li>
-  <li>
-    <a routerLink="posts">posts (m2)</a>
-  </li>
-  <li>
-    <a routerLink="posts/elements">elements (m2)</a>
-  </li>
-</ul>
+<nav>
+  
+    {{ message }}, {{ message2 }}.
+  <ul>
+    <li>
+      <a routerLink="">home (m1)</a>
+    </li>
+    <li>
+      <a routerLink="about">about (m1)</a>
+    </li>
+    <li>
+      <a routerLink="posts">posts (m2)</a>
+    </li>
+    <li>
+      <a routerLink="posts/elements">elements (m2)</a>
+    </li>
 
+    <li>
+        <span>info - CSS</span>
+        <div class="overlay">
+          <h1>some details</h1>
+          <p>some info</p>
+        </div>
+      </li>
+
+    <li dropdown>
+      <span>info - directive</span>
+      <div class="dropdown" *dropdownContent>
+        <h1>some details</h1>
+        <p>some info</p>
+      </div>
+    </li>
+
+  </ul>
+  
+</nav>
 
 
